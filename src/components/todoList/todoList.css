@@ -1,0 +1,19 @@
+.todoList-inputBox-container {
+  width: 30rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.todo-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}

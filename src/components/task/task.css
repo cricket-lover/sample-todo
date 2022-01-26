@@ -1,0 +1,65 @@
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.6rem auto;
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid black;
+}
+
+.todo .checkbox {
+  background-color: rgb(200, 86, 86);
+}
+
+.doing .checkbox {
+  background-color: rgb(86, 86, 200);
+}
+
+.done .checkbox {
+  background-color: rgb(86, 200, 86);
+}
+
+.done .content {
+  text-decoration: line-through;
+}
+
+.content-editable {
+  border: 1px solid blue;
+  background-color: lightgrey;
+  margin: 0 0 0 0.6rem;
+  font-weight: bold;
+}
+
+.content {
+  background-color: lightgrey;
+  margin: 0 0 0 0.6rem;
+  font-weight: bold;
+}
+
+.delete {
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 0.5rem;
+  border: 1px solid rgb(122, 122, 122);
+  cursor: pointer;
+}
+
+.edit {
+  font-weight: bold;
+  font-size: medium;
+  margin-left: auto;
+  border: 1px solid rgb(122, 122, 122);
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
