@@ -4,3 +4,12 @@
   text-align: center;
   margin: 1rem auto;
 }
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.edit-title-button {
+  height: 1.2rem;
+}

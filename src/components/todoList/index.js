@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { InputBox, Todo } from "..";
+import addTodo from "../../icons/add.png";
+import Button from "../utils/button";
 
 import "./todoList.css";
 
@@ -33,23 +35,29 @@ const TodoList = () => {
     return <Todo todo={todo} key={todo.id} />;
   });
 
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    setShowErrorMsg(false);
+  };
+
   return (
     <div className="todoList-wrapper">
       <div className="todoList-inputBox-container">
-        <div className="todoList-inputBox">
-          <input
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-              setShowErrorMsg(false);
-            }}
-            onBlur={() => setShowErrorMsg(false)}
-            placeholder="23rd Jan - Shopping"
-            onKeyDown={handleKeyDown}
-          />
-          <button onClick={addNewTodo}>Add Todo</button>
-        </div>
-        <div className={errorMsgDisplay}>
+        <InputBox
+          value={value}
+          handleChange={handleChange}
+          handleBlur={() => setShowErrorMsg(false)}
+          placeholder="23rd Jan - Shopping"
+          handleKeyDown={handleKeyDown}
+          className="todoList-inputBox"
+        />
+        <img
+          src={addTodo}
+          className="addTodo-button"
+          onClick={addNewTodo}
+          alt="Add Todo"
+        />
+        <div className={`error-msg ${errorMsgDisplay}`}>
           "Please provide a title to add your todo"
         </div>
       </div>

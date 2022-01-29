@@ -3,6 +3,19 @@
   margin: 0 auto;
   text-align: center;
   padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoList-inputBox {
+  width: 27rem;
+  height: 2rem;
+}
+
+.addTodo-button {
+  height: 2rem;
 }
 
 .todo-list {
@@ -16,4 +29,10 @@
 
 .show {
   visibility: visible;
+}
+
+.error-msg {
+  padding-top: 1rem;
+  margin: 0 auto;
+  color: tomato;
 }

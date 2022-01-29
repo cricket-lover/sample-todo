@@ -1,10 +1,18 @@
 import { useState } from "react";
+import bin from "../../icons/bin.png";
+import editText from "../../icons/edit-text.png";
+import save from "../../icons/diskette.png";
 import "./task.css";
 
 const Task = ({ task, handleClick, deleteTask, editTask }) => {
   const [showIcons, setShowIcons] = useState(false);
   const [value, setValue] = useState(task.content);
   const [isContentEditable, setIsContentEditable] = useState(false);
+
+  const saveTask = () => {
+    setIsContentEditable(false);
+    editTask(task.id, value);
+  };
 
   return (
     <div
@@ -16,14 +24,10 @@ const Task = ({ task, handleClick, deleteTask, editTask }) => {
       <div className="checkbox"></div>
       {isContentEditable ? (
         <p
-          className="content-editable"
+          className="content"
           onChange={(e) => setValue(e.target.value)}
           suppressContentEditableWarning={true}
           contentEditable={isContentEditable}
-          onBlur={() => {
-            setIsContentEditable(false);
-            editTask(task.id, value);
-          }}
         >
           {task.content}
         </p>
@@ -37,18 +41,27 @@ const Task = ({ task, handleClick, deleteTask, editTask }) => {
           {task.content}
         </p>
       )}
-      <div
-        className={`edit ${showIcons ? "show" : "hidden"}`}
-        onClick={() => setIsContentEditable(true)}
-      >
-        E
-      </div>
-      <div
+      {isContentEditable ? (
+        <img
+          src={save}
+          className={`edit ${showIcons ? "show" : "hidden"}`}
+          onClick={saveTask}
+          alt="save"
+        />
+      ) : (
+        <img
+          src={editText}
+          className={`edit ${showIcons ? "show" : "hidden"}`}
+          onClick={() => setIsContentEditable(true)}
+          alt="edit"
+        />
+      )}
+      <img
+        src={bin}
         className={`delete ${showIcons ? "show" : "hidden"}`}
         onClick={() => deleteTask(task.id)}
-      >
-        X
-      </div>
+        alt="delete"
+      />
     </div>
   );
 };

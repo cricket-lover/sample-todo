@@ -1,1 +1,7 @@
+body {
+  font-family: "Courier New";
+}
 
+img {
+  cursor: pointer;
+}

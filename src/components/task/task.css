@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   margin: 0.6rem auto;
+  cursor: pointer;
 }
 
 .checkbox {
@@ -27,13 +28,6 @@
   text-decoration: line-through;
 }
 
-.content-editable {
-  border: 1px solid blue;
-  background-color: lightgrey;
-  margin: 0 0 0 0.6rem;
-  font-weight: bold;
-}
-
 .content {
   background-color: lightgrey;
   margin: 0 0 0 0.6rem;
@@ -41,19 +35,15 @@
 }
 
 .delete {
-  font-weight: bold;
-  font-size: medium;
   margin-left: 0.5rem;
-  border: 1px solid rgb(122, 122, 122);
   cursor: pointer;
+  height: 1rem;
 }
 
 .edit {
-  font-weight: bold;
-  font-size: medium;
   margin-left: auto;
-  border: 1px solid rgb(122, 122, 122);
   cursor: pointer;
+  height: 1rem;
 }
 
 .hidden {

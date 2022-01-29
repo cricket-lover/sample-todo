@@ -7,6 +7,7 @@ import statuses from "../../constants";
 const Todo = function ({ todo }) {
   const [tasks, setTasks] = useState(todo.tasks);
   const [title, setTitle] = useState(todo.title);
+  const [value, setValue] = useState("");
 
   const updateTaskStatus = (taskId, taskStatus) => {
     const updatedTasks = tasks.slice();
@@ -37,10 +38,24 @@ const Todo = function ({ todo }) {
     updatedTasks[index].content = newTask;
     setTasks(updatedTasks);
   };
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      addNewTask(value);
+      setValue("");
+    }
+  };
+
   return (
     <div className="container">
       <Title title={title.trim()} updateTitle={setTitle} />
-      <InputBox onEnterPress={addNewTask} />
+      <InputBox
+        value={value}
+        placeholder="Buy Vegetables"
+        handleKeyDown={handleKeyDown}
+        handleChange={(e) => setValue(e.target.value)}
+        className="todo-input"
+      />
       {tasks.length === 0 ? (
         <p>
           <em>No tasks to show</em>

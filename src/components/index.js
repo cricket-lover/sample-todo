@@ -1,4 +1,4 @@
-import InputBox from "./inputBox";
+import InputBox from "./utils/inputBox";
 import Title from "./title";
 import Task from "./task";
 import TaskContainer from "./taskContainer";
